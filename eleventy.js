@@ -1,4 +1,8 @@
 module.exports = function(eleventyConfig) {
+
+eleventyConfig.addPassthroughCopy("admin");
+eleventyConfig.addPassthroughCopy("src/uploads");
+
   return {
     dir: {
       input: "src",
@@ -6,6 +10,3 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
-
-eleventyConfig.addPassthroughCopy("admin");
-eleventyConfig.addPassthroughCopy("src/uploads");
