@@ -1,7 +1,7 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("src/uploads");
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy("src/public/scripts");
 
   return {
     dir: {
