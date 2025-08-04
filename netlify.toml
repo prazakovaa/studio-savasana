@@ -1,0 +1,11 @@
+[build]
+publish = "_site"
+command = "npx @11ty/eleventy"
+
+[build.environment]
+NODE_VERSION = "20.11.1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
