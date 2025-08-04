@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Aktuality"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nadpis", name: "title", widget: "string", required: true }
+      - { label: "Datum", name: "date", widget: "datetime", required: true }
+      - { label: "Obsah", name: "body", widget: "markdown", required: true }
+      - { label: "Obrázek", name: "image", widget: "image", required: false }
+      - { label: "Kategorie", name: "category", widget: "select", options: ["Naučné", "Důležité", "Informativní"], required: false }
