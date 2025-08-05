@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrace</title>
+  <script src="https://unpkg.com/gotrue-js"></script>
+</head>
+<body>
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Heslo" required />
+    <button type="submit">Registrovat</button>
+  </form>
+
+  <script>
+    const auth = new window.GoTrue({
+      APIUrl: 'https://studio-savasana.netlify.app/.netlify/identity',
+      audience: '',
+      setCookie: false
+    });
+
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signup(email, password)
+        .then(user => {
+          alert("Uživatel vytvořen! Zkontroluj email pro potvrzení.");
+          window.location.href = "/admin/";
+        })
+        .catch(error => {
+          alert("Chyba: " + error.message);
+        });
+    });
+  </script>
+</body>
+</html>
