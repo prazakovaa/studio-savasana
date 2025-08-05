@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Registrace</title>
-  <script src="https://cdn.jsdelivr.net/npm/gotrue-js@1.4.0/dist/gotrue.min.js"></script>
+  <script src="https://unpkg.com/gotrue-js@1.4.0/dist/gotrue.min.js"></script>
 </head>
 <body>
   <form id="signup-form">
@@ -31,7 +31,7 @@
             })
             .catch(error => {
             console.error("Chyba při registraci:", error);
-            alert("Registrace selhala.");
+            alert(`Registrace selhala: ${error.message}`);
             });
         });
   </script>
